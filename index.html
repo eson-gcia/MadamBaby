@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You, Always</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles" id="paticles"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Three months of choosing you</p>
+      <h1 class="hero-title">Ikaw pa rin.<br/><em>Lagi.</em></h1>
+      <p class="hero-sub">Para sa aking Remedios — sa lahat ng buwang darating pa.</p>
+      <div class="scroll-hint">↓</div>
+    </div>
+  </section>
+
+  <!-- MUSIC PLAYER -->
+  <section class="music-section">
+    <div class="player-card">
+      <div class="player-disc" id="disc">♪</div>
+      <div class="player-info">
+        <p class="now-playing">Now Playing</p>
+        <p class="song-title" id="songTitle">Wish List — Taylor Swift</p>
+      </div>
+      <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+      <audio id="audioPlayer" loop>
+        <!-- Replace src with your actual audio file path -->
+        <!-- <source src="wishlist.mp3" type="audio/mpeg" /> -->
+      </audio>
+    </div>
+    <p class="music-note">Ang kanta nating ito — ang isa sa marami.</p>
+  </section>
+
+  <!-- OUR STORY TIMELINE -->
+  <section class="timeline-section">
+    <h2 class="section-title">Ang ating kwento</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">The beginning</span>
+          <p>Pitong buwan bago pa man ako naglakas-loob na magtanong. Nandoon ka na pala — naghihintay.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">The flowers</span>
+          <p>Isang random na araw. Isang bouquet. "Grabe talaga yung bumibili ng flowers sa isang random day." — ikaw.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Inaantay ko talaga</span>
+          <p>Nang tanungin kita — "Ang weird naman kung di ako papayag, inaantay ko talaga kailan mo yan itatanong." Ngumiti ako nang matagal.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Today — 3 months</span>
+          <p>Tatlong buwan ng pag-aaral kung paano ibigin ka nang tama. Hindi pa tapos ang pag-aaral — at ayoko pang matapos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REASONS -->
+  <section class="reasons-section">
+    <h2 class="section-title">Bakit kita mahal</h2>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <span class="reason-num">01</span>
+        <p>Kahit mahirap kang basahin minsan, pinagsikapan kitang intindihin — at gagawin ko pa rin.</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">02</span>
+        <p>Yung paraan mong mag-alaga — hindi palaging sa salita, pero nararamdaman ko pa rin.</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">03</span>
+        <p>Kahit sa Bisaya o Ilonggo — alam kong para sa akin yung mga bagay na hindi mo kayang sabihin nang direkta.</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">04</span>
+        <p>Dahil "baby pa talaga ang baby mo" — at gusto kitang samahan habang natututo tayong pareho.</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">05</span>
+        <p>Kahit malayo, pinipili mo pa rin akong kausapin. Kahit ingame. Kahit pagod ka na.</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">06</span>
+        <p>Dahil sa lahat ng taong pwede mong piliin — pumili ka pa rin ng 26. Pumili ka pa rin sakin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTER 1 — Del Pilar -->
+  <section class="letter-section">
+    <div class="letter-card">
+      <p class="letter-eyebrow">Para sa iyo</p>
+      <div class="letter-body">
+        <p>Mahal ko,</p>
+        <br/>
+        <p>Tatlong buwan na — at sa bawat araw na lumilipas, lalo kong nauunawaan kung bakit ikaw ang pinili ng aking puso.</p>
+        <br/>
+        <p>Hindi madali ang landas na ito. May mga araw na malayo ang ating mga kamay, may mga sandaling hindi tayo nagkakaunawaan, may mga oras na ang katahimikan lamang ang ating samahan — ngunit sa kabila ng lahat, nananatili kang dahilan ng aking pagbabalik.</p>
+        <br/>
+        <p>Kung si Del Pilar ay nagmahal nang walang takot sa harap ng digmaan, ako naman ay nagmamahal nang walang pag-aalangan sa harap ng kalayuan. Sapagkat ang distansya ay walang kapangyarihang pigilan ang isang pusong tapat.</p>
+        <br/>
+        <p>Ikaw ang aking Remedios — at ako ay laging magiging handa para sa iyo.</p>
+        <br/>
+        <p>Iloveyou — noon, ngayon, at sa bawat sandaling darating pa.</p>
+        <br/>
+        <p class="letter-sign">— Edison 🌻</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="letter-divider">
+    <span>✦</span>
+  </div>
+
+  <!-- LETTER 2 — Distance & Learning -->
+  <section class="letter-section letter-section--dark">
+    <div class="letter-card letter-card--wide">
+      <p class="letter-eyebrow">Ang pagmamahal na hindi pa tapos matuto</p>
+      <div class="letter-body">
+        <p>Pinakamamahal ko,</p>
+        <br/>
+        <p>Alam ko na hindi perpekto ang ating paglalakbay. May mga araw na ang layo ay parang pader na hindi matibag — mga sandaling ang iyong katahimikan ay mas mabigat kaysa anumang salita, mga oras na ang hintay ay kasingsakit ng kawalan. Ngunit sa kabila ng lahat ng ito, hindi ko kailanman pinagisipang tumalikod.</p>
+        <br/>
+        <p>Sapagkat ang pagmamahal ay hindi isang bagay na natapos matutunan — ito ay isang patuloy na pag-aaral. At ikaw — ikaw ang aking pinakamahirap at pinaka-kagiliw-giliw na aralin.</p>
+        <br/>
+        <p>Natututo akong basahin ang iyong mga katahimikan — ang mga salitang hindi mo kayang bigkasin ngunit nararamdaman ko sa paraan ng iyong pagtingin, sa bawat maliit na kilos na iyong ginagawa. Natututo akong hintayin ang iyong oras, sapagkat alam ko na ang puso mo ay hindi mabibigla — kailangang dahan-dahan, kailangang maingat, tulad ng pagbubukas ng isang marupok ngunit magandang bulaklak.</p>
+        <br/>
+        <p>Magkakamali tayo. Magtatampo. Magaagawan ng oras at pansin. May mga araw na ang layo ay magiging sanhi ng hindi pagkakaintindihan — mga salitang maling naibigay, mga inaasahang hindi natupad, mga sandaling pakiramdam natin ay nag-iisa kahit magkausap tayo. Iyon ay totoo. Hindi ko itatago.</p>
+        <br/>
+        <p>Ngunit ito rin ay totoo — sa bawat pagkakataong nagkamali ako, pinili kitang harapin nang may katapatan. Sa bawat sandaling hindi kita naintindihan, pinili kitang pag-aralan nang muli. Sa bawat agwat na lumaki sa pagitan natin, pinili kitang abutin — kahit mahirap, kahit malayo, kahit hindi ko laging alam kung paano.</p>
+        <br/>
+        <p>Ang distansya ay nagpapahirap sa ating komunikasyon ngunit hindi nito kayang burahin ang aking pagmamahal sa iyo. Ang ating mga pagtatalo ay tanda ng dalawang taong seryosong nagmamalasakit — sapagkat ang mga taong walang malasakit ay hindi na nag-aabala pang makipagtalo.</p>
+        <br/>
+        <p>At ikaw — natututo ka rin. Natututo kang ibukas ang iyong puso sa isang taong handang tumanggap ng lahat ng ikaw. Natututo kang sabihin ang hindi mo laging kayang sabihin. Natututo kang magtiwala — at alam ko kung gaano kahirap iyon para sa isang pusong matagal nang nagingat.</p>
+        <br/>
+        <p>Kaya heto ang aking pangako sa iyo — hindi ko hihintayin na maging perpekto ang lahat bago kita mahalin nang buong-buo. Mamahalin kita ngayon — sa iyong mga pagkukulang, sa iyong mga araw na malamig, sa iyong mga sandaling hindi mo alam kung paano ipahayag ang nararamdaman mo. Mamahalin kita sa gitna ng ating pag-aaral, sa gitna ng ating pagkakamali, sa gitna ng lahat ng hindi pa natin nalalaman tungkol sa isa't isa.</p>
+        <br/>
+        <p>Sapagkat ang tunay na pagmamahal ay hindi naghihintay ng tamang sandali — pumipili itong manatili kahit sa pinakamaling oras.</p>
+        <br/>
+        <p>Hihintayin kita sa Disyembre. At sa lahat ng Disyembre pa pagkatapos noon.</p>
+        <br/>
+        <p class="letter-sign">Sa pagmamahal na patuloy na natututo — Edison 🌻</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Tatlong buwan pababa. Habambuhay pa ang kainan. 🌻</p>
+    <p class="footer-small">Made with love, kahit malayo.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
