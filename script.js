@@ -169,3 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
   createParticles();
   updateScrollHint();
 });
+
+// ============================================
+// FLIPBOOK SCROLL
+// ============================================
+function scrollFlipbook(direction) {
+  const track = document.getElementById('flipbookTrack');
+  const cardWidth = 280 + 24; // card width + gap
+  track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
