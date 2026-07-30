@@ -1,12 +1,12 @@
 :root {
   --midnight:    #0a0f1e;
   --deep-navy:   #0d1b3e;
-  --ocean:       #1a3a6b;
+  --ocean:       #39619d;
   --steel:       #79a2df;
   --mist:        #a8c4e0;
   --frost:       #ddeeff;
   --cream:       #f5f0e8;
-  --gold:        #c9a84c;
+  --gold:        #eaff00;
   --gold-soft:   rgba(201, 168, 76, 0.15);
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -140,7 +140,6 @@ body {
   border: 1px solid rgba(168, 196, 224, 0.15);
   border-radius: 16px;
   padding: 1.5rem 2rem;
-  backdrop-filter: blur(10px);
   margin-bottom: 1rem;
   flex-wrap: wrap;
   justify-content: center;
