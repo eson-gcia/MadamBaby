@@ -642,3 +642,62 @@ img {
     transform: none;
   }
 }
+
+/* ============================================
+   BOUQUET
+   ============================================ */
+.bouquet-section {
+  position: relative;
+  z-index: 1;
+  background: var(--midnight);
+  text-align: center;
+  padding: var(--space-xl) var(--space-sm) var(--space-lg);
+}
+
+.bouquet-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--mist);
+  margin-bottom: 2rem;
+}
+
+.bouquet-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouquet-svg {
+  width: clamp(240px, 70vw, 360px);
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(201, 168, 76, 0.15));
+}
+
+/* gentle sway animations */
+.flower-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+.flower-sway-left {
+  animation: sway-left 4.5s ease-in-out infinite;
+}
+
+.flower-sway-right {
+  animation: sway-right 3.8s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+
+@keyframes sway-left {
+  0%, 100% { transform: rotate(-3deg); }
+  50%       { transform: rotate(1deg); }
+}
+
+@keyframes sway-right {
+  0%, 100% { transform: rotate(1deg); }
+  50%       { transform: rotate(-3deg); }
+}
