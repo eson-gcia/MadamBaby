@@ -31,21 +31,6 @@ function createParticles() {
 createParticles();
 
 // ============================================
-// SCROLL REVEAL — TIMELINE
-// ============================================
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.timeline-item').forEach(item => {
-  observer.observe(item);
-});
-
-// ============================================
 // MUSIC PLAYER
 // ============================================
 const audio = document.getElementById('audioPlayer');
@@ -55,12 +40,6 @@ const disc = document.getElementById('disc');
 let isPlaying = false;
 
 function togglePlay() {
-  if (!audio.src || audio.src === window.location.href) {
-    playBtn.textContent = '♪';
-    setTimeout(() => playBtn.textContent = '▶', 1500);
-    return;
-  }
-
   if (isPlaying) {
     audio.pause();
     playBtn.textContent = '▶';
@@ -71,7 +50,8 @@ function togglePlay() {
       playBtn.textContent = '⏸';
       disc.classList.add('spinning');
       isPlaying = true;
-    }).catch(() => {
+    }).catch((err) => {
+      console.error('Audio error:', err);
       playBtn.textContent = '▶';
     });
   }
@@ -93,7 +73,7 @@ window.addEventListener('scroll', () => {
 function scrollFlipbook(direction) {
   const track = document.getElementById('flipbookTrack');
   if (!track) return;
-  const cardWidth = track.querySelector('.flip-card')?.offsetWidth + 16 || 296;
+  const cardWidth = (track.querySelector('.flip-card')?.offsetWidth || 280) + 16;
   track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
 }
 
@@ -103,19 +83,15 @@ function scrollFlipbook(direction) {
 const flipbookTrack = document.getElementById('flipbookTrack');
 if (flipbookTrack) {
   let startX = 0;
-  let isDragging = false;
 
   flipbookTrack.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-    isDragging = true;
   }, { passive: true });
 
   flipbookTrack.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 30) {
       scrollFlipbook(diff > 0 ? 1 : -1);
     }
-    isDragging = false;
   }, { passive: true });
 }
