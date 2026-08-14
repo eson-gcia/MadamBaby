@@ -1,6 +1,3 @@
-// ============================================
-// FLOATING PETALS
-// ============================================
 function createPetals() {
   const container = document.getElementById('petals');
   const emojis = ['🌸', '✿', '꩜', '🌷', '✦'];
@@ -31,9 +28,6 @@ function createPetals() {
 
 createPetals();
 
-// ============================================
-// MUSIC PLAYER — autoplay with fallback
-// ============================================
 const audio   = document.getElementById('audioPlayer');
 const playBtn = document.getElementById('playBtn');
 const btnIcon = document.getElementById('btnIcon');
@@ -61,11 +55,9 @@ function togglePlay() {
   }
 }
 
-// Try autoplay — browsers may block it until user interacts
 audio.play()
   .then(() => setPlaying(true))
   .catch(() => {
-    // Blocked by browser — wait for first interaction
     setPlaying(false);
     const startOnInteract = () => {
       audio.play().then(() => setPlaying(true)).catch(() => {});
@@ -76,26 +68,11 @@ audio.play()
     document.addEventListener('touchstart', startOnInteract, { passive: true });
   });
 
-// ============================================
-// SCROLL HINT FADE
-// ============================================
 window.addEventListener('scroll', () => {
   const hint = document.querySelector('.scroll-hint');
   if (hint) hint.style.opacity = window.scrollY > 60 ? '0' : '1';
 }, { passive: true });
 
-// ============================================
-// FLIPBOOK SCROLL
-// ============================================
-function scrollFlipbook(direction) {
-  const track = document.getElementById('flipbookTrack');
-  if (!track) return;
-  const card = track.querySelector('.flip-card');
-  const cardWidth = (card ? card.offsetWidth : 270) + 20;
-  track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-}
-
-// Touch swipe support
 const track = document.getElementById('flipbookTrack');
 if (track) {
   let startX = 0;

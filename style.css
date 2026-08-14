@@ -1,6 +1,3 @@
-/* ============================================
-   TOKENS — Soft Blue Palette
-   ============================================ */
 :root {
   --alice-blue:    #edf2fb;
   --lavender:      #e2eafc;
@@ -10,7 +7,6 @@
   --periwinkle-3:  #b6ccfe;
   --baby-blue-ice: #abc4ff;
 
-  /* functional */
   --bg:          var(--alice-blue);
   --bg-section:  var(--lavender);
   --bg-card:     #ffffff;
@@ -35,9 +31,6 @@
   --radius-lg: 32px;
 }
 
-/* ============================================
-   RESET & BASE
-   ============================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -62,9 +55,6 @@ img {
   display: block;
 }
 
-/* ============================================
-   FLOATING PETALS
-   ============================================ */
 .petals {
   position: fixed;
   inset: 0;
@@ -88,9 +78,6 @@ img {
   100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-/* ============================================
-   HERO
-   ============================================ */
 .hero {
   position: relative;
   z-index: 1;
@@ -155,9 +142,6 @@ img {
   animation: fade-up 0.9s ease forwards 0.8s;
 }
 
-/* ============================================
-   MUSIC PLAYER
-   ============================================ */
 .player {
   display: flex;
   align-items: center;
@@ -244,9 +228,6 @@ img {
 .player-btn:hover  { background: var(--periwinkle-3); }
 .player-btn:active { transform: scale(0.93); }
 
-/* ============================================
-   SCROLL HINT
-   ============================================ */
 .scroll-hint {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
@@ -260,17 +241,11 @@ img {
   50%       { transform: translateY(6px); }
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================
-   SECTION TITLE
-   ============================================ */
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 5vw, 2.6rem);
@@ -280,102 +255,6 @@ img {
   margin-bottom: var(--space-lg);
 }
 
-/* ============================================
-   FLIPBOOK
-   ============================================ */
-.flipbook-section {
-  position: relative;
-  z-index: 1;
-  padding: var(--space-xl) 0;
-  background: var(--lavender);
-}
-
-.flipbook-section .section-title {
-  padding: 0 var(--space-sm);
-}
-
-.flipbook-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 0 var(--space-xs);
-}
-
-.flipbook-track {
-  display: flex;
-  gap: 1.25rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  max-width: calc(100vw - 6rem);
-  padding: 0.5rem 0.5rem 1.5rem;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.flipbook-track::-webkit-scrollbar { display: none; }
-
-.flip-card {
-  flex: 0 0 clamp(220px, 65vw, 270px);
-  scroll-snap-align: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(171, 196, 255, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-@media (hover: hover) {
-  .flip-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 32px rgba(171, 196, 255, 0.35);
-  }
-}
-
-.flip-card img {
-  width: 100%;
-  height: clamp(190px, 45vw, 260px);
-  object-fit: cover;
-  display: block;
-}
-
-.flip-caption {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-  color: var(--text-mid);
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.flip-arrow {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-mid);
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.2s, box-shadow 0.2s;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  box-shadow: 0 2px 8px rgba(171, 196, 255, 0.2);
-}
-
-.flip-arrow:hover  { background: var(--periwinkle); }
-.flip-arrow:active { transform: scale(0.93); }
-
-/* ============================================
-   MESSAGE
-   ============================================ */
 .message-section {
   position: relative;
   z-index: 1;
@@ -436,9 +315,6 @@ img {
   margin-top: 0.5rem;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
 .site-footer {
   position: relative;
   z-index: 1;
@@ -468,9 +344,6 @@ img {
   letter-spacing: 0.08em;
 }
 
-/* ============================================
-   MOBILE — 480px and below
-   ============================================ */
 @media (max-width: 480px) {
 
   :root {
@@ -566,9 +439,6 @@ img {
   }
 }
 
-/* ============================================
-   VERY SMALL PHONES — 360px and below
-   ============================================ */
 @media (max-width: 360px) {
 
   .hero-title {
@@ -592,9 +462,6 @@ img {
   }
 }
 
-/* ============================================
-   REDUCED MOTION
-   ============================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
