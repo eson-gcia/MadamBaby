@@ -1,25 +1,26 @@
 // ============================================
-// PARTICLES — fewer on mobile for performance
+// FLOATING PETALS
 // ============================================
-function createParticles() {
-  const container = document.getElementById('particles');
+function createPetals() {
+  const container = document.getElementById('petals');
+  const emojis = ['🌸', '✿', '꩜', '🌷', '✦'];
   const isMobile = window.innerWidth < 600;
-  const count = isMobile ? 12 : 30;
+  const count = isMobile ? 10 : 20;
 
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
-    p.classList.add('particle');
+    p.classList.add('petal');
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
-    const size = Math.random() * 3 + 1;
-    const left = Math.random() * 100;
-    const duration = Math.random() * 15 + 10;
-    const delay = Math.random() * 15;
+    const left     = Math.random() * 100;
+    const duration = Math.random() * 12 + 8;
+    const delay    = Math.random() * 10;
+    const size     = Math.random() * 0.6 + 0.7;
 
     p.style.cssText = `
-      width: ${size}px;
-      height: ${size}px;
       left: ${left}%;
-      bottom: -10px;
+      top: -60px;
+      font-size: ${size}rem;
       animation-duration: ${duration}s;
       animation-delay: ${delay}s;
     `;
@@ -28,43 +29,59 @@ function createParticles() {
   }
 }
 
-createParticles();
+createPetals();
 
 // ============================================
-// MUSIC PLAYER
+// MUSIC PLAYER — autoplay with fallback
 // ============================================
-const audio = document.getElementById('audioPlayer');
+const audio   = document.getElementById('audioPlayer');
 const playBtn = document.getElementById('playBtn');
-const disc = document.getElementById('disc');
+const btnIcon = document.getElementById('btnIcon');
+const disc    = document.getElementById('disc');
 
 let isPlaying = false;
+
+function setPlaying(state) {
+  isPlaying = state;
+  btnIcon.textContent = state ? '⏸' : '▶';
+  state ? disc.classList.add('spinning') : disc.classList.remove('spinning');
+}
 
 function togglePlay() {
   if (isPlaying) {
     audio.pause();
-    playBtn.textContent = '▶';
-    disc.classList.remove('spinning');
-    isPlaying = false;
+    setPlaying(false);
   } else {
-    audio.play().then(() => {
-      playBtn.textContent = '⏸';
-      disc.classList.add('spinning');
-      isPlaying = true;
-    }).catch((err) => {
-      console.error('Audio error:', err);
-      playBtn.textContent = '▶';
-    });
+    audio.play()
+      .then(() => setPlaying(true))
+      .catch(err => {
+        console.error('Audio play error:', err);
+        setPlaying(false);
+      });
   }
 }
+
+// Try autoplay — browsers may block it until user interacts
+audio.play()
+  .then(() => setPlaying(true))
+  .catch(() => {
+    // Blocked by browser — wait for first interaction
+    setPlaying(false);
+    const startOnInteract = () => {
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+      document.removeEventListener('click', startOnInteract);
+      document.removeEventListener('touchstart', startOnInteract);
+    };
+    document.addEventListener('click', startOnInteract);
+    document.addEventListener('touchstart', startOnInteract, { passive: true });
+  });
 
 // ============================================
 // SCROLL HINT FADE
 // ============================================
 window.addEventListener('scroll', () => {
   const hint = document.querySelector('.scroll-hint');
-  if (hint) {
-    hint.style.opacity = window.scrollY > 50 ? '0' : '1';
-  }
+  if (hint) hint.style.opacity = window.scrollY > 60 ? '0' : '1';
 }, { passive: true });
 
 // ============================================
@@ -73,25 +90,18 @@ window.addEventListener('scroll', () => {
 function scrollFlipbook(direction) {
   const track = document.getElementById('flipbookTrack');
   if (!track) return;
-  const cardWidth = (track.querySelector('.flip-card')?.offsetWidth || 280) + 16;
+  const card = track.querySelector('.flip-card');
+  const cardWidth = (card ? card.offsetWidth : 270) + 20;
   track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
 }
 
-// ============================================
-// TOUCH SWIPE for flipbook
-// ============================================
-const flipbookTrack = document.getElementById('flipbookTrack');
-if (flipbookTrack) {
+// Touch swipe support
+const track = document.getElementById('flipbookTrack');
+if (track) {
   let startX = 0;
-
-  flipbookTrack.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  flipbookTrack.addEventListener('touchend', (e) => {
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
     const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 30) {
-      scrollFlipbook(diff > 0 ? 1 : -1);
-    }
+    if (Math.abs(diff) > 30) scrollFlipbook(diff > 0 ? 1 : -1);
   }, { passive: true });
 }

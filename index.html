@@ -2,105 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For You, Always</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#d7e3fc"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <title>Happy 3rd Monthsary, Baby 🌸</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Floating particles -->
-  <div class="particles" id="particles"></div>
+  <!-- FLOATING PETALS -->
+  <div class="petals" id="petals"></div>
 
-  <!-- HERO -->
+  <!-- HERO — Full screen greeting -->
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">THREE MONTHS OF LOVING YOU</p>
-      <h1 class="hero-title">For the one that I admire and love the most, <br/><em>My Baby</em></h1>
-      <div class="scroll-hint">↓</div>
-    </div>
-  </section>
 
-  <!-- MUSIC PLAYER -->
-  <section class="music-section">
-    <div class="player-card">
-      <img src="Baby1.jpg" class="player-img" alt="us" />
-      <div class="player-disc" id="disc">♪</div>
-      <div class="player-info">
-        <p class="now-playing">Now Playing</p>
-        <p class="song-title" id="songTitle">Pasilyo — Sunkissed Lola</p>
+      <p class="hero-eyebrow">✦ 3rd Monthsary ✦</p>
+
+      <h1 class="hero-title">
+        For my one<br/>
+        and only love,<br/>
+        <em>my baby in all universes.</em>
+      </h1>
+
+      <p class="hero-date">Happy 3rd Monthsary, Baby 🌸</p>
+
+      <!-- MUSIC PLAYER -->
+      <div class="player">
+        <div class="player-disc" id="disc">🎵</div>
+        <div class="player-info">
+          <span class="player-label">Now Playing</span>
+          <span class="player-song" id="songTitle">Pasilyo — Sunkissed Lola</span>
+        </div>
+        <button class="player-btn" id="playBtn" onclick="togglePlay()" aria-label="Play or pause music">
+          <span id="btnIcon">⏸</span>
+        </button>
+        <audio id="audioPlayer" loop autoplay>
+          <source src="pasilyo.mp3" type="audio/mpeg" />
+        </audio>
       </div>
-      <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
-      <audio id="audioPlayer" loop>
-        <source src="pasilyo.mp3" type="audio/mpeg" />
-      </audio>
+
+      <div class="scroll-hint">scroll down ↓</div>
     </div>
   </section>
 
   <!-- FLIPBOOK -->
   <section class="flipbook-section">
-    <h2 class="section-title">Ang ating mga sandali</h2>
+    <h2 class="section-title">Ang ating mga sandali 🌸</h2>
     <div class="flipbook-wrapper">
-      <button class="flip-arrow flip-left" onclick="scrollFlipbook(-1)">‹</button>
+      <button class="flip-arrow" onclick="scrollFlipbook(-1)" aria-label="Previous">‹</button>
       <div class="flipbook-track" id="flipbookTrack">
 
         <div class="flip-card">
-          <img src="Baby1.jpg" alt="memory 1" />
-          <p class="flip-caption">Ang cuteeee</p>
+          <img src="Baby1.jpg" alt="Memory 1" />
+          <p class="flip-caption">Ang  🌸</p>
         </div>
         <div class="flip-card">
-          <img src="Baby1.jpg" alt="memory 2" />
-          <p class="flip-caption">Ang cuteeee</p>
+          <img src="Baby1.jpg" alt="Memory 2" />
+          <p class="flip-caption">Ang cuteeee 🌸</p>
         </div>
         <div class="flip-card">
-          <img src="Baby1.jpg" alt="memory 3" />
-          <p class="flip-caption">Ang cuteeee</p>
+          <img src="Baby1.jpg" alt="Memory 3" />
+          <p class="flip-caption">Ang cuteeee 🌸</p>
         </div>
         <div class="flip-card">
-          <img src="Baby1.jpg" alt="memory 4" />
-          <p class="flip-caption">Ang cuteeee</p>
+          <img src="Baby1.jpg" alt="Memory 4" />
+          <p class="flip-caption">Ang cuteeee 🌸</p>
         </div>
 
       </div>
-      <button class="flip-arrow flip-right" onclick="scrollFlipbook(1)">›</button>
+      <button class="flip-arrow" onclick="scrollFlipbook(1)" aria-label="Next">›</button>
     </div>
   </section>
 
-  <!-- LETTER -->
-  <section class="letter-section letter-section--dark">
-    <div class="letter-card letter-card--wide">
-      <p class="letter-eyebrow">Ang pagmamahal na hindi pa tapos matuto</p>
-      <div class="letter-body">
+  <!-- MESSAGE -->
+  <section class="message-section">
+    <div class="message-card">
+      <p class="message-eyebrow">✦ Para sa iyo ✦</p>
+      <div class="message-body">
         <p>Pinakamamahal ko,</p>
         <br/>
-        <p>Alam ko na hindi perpekto ang ating paglalakbay. May mga araw na ang layo ay parang pader na hindi matibag — mga sandaling ang iyong katahimikan ay mas mabigat kaysa anumang salita, mga oras na ang hintay ay kasingsakit ng kawalan. Ngunit sa kabila ng lahat ng ito, hindi ko kailanman pinagisipang tumalikod.</p>
+        <p>Tatlong buwan na — at sa bawat araw na lumilipas, lalo kong nauunawaan kung bakit ikaw ang pinili ng aking puso. Hindi madali ang landas na ito. May mga araw na ang layo ay parang pader na hindi matibag, may mga sandaling ang katahimikan ay mas mabigat kaysa anumang salita. Ngunit sa kabila ng lahat, hindi ko kailanman pinagisipang tumalikod.</p>
         <br/>
-        <p>Sapagkat ang pagmamahal ay hindi isang bagay na natapos matutunan — ito ay isang patuloy na pag-aaral. At ikaw — ikaw ang aking pinakamahirap at pinaka-kagiliw-giliw na aralin.</p>
+        <p>Natututo akong basahin ang iyong mga katahimikan — ang mga salitang hindi mo kayang bigkasin ngunit nararamdaman ko sa bawat maliit na kilos na iyong ginagawa. Natututo akong hintayin ang iyong oras, sapagkat alam ko na ang puso mo ay hindi mabibigla — kailangang dahan-dahan, kailangang maingat, tulad ng pagbubukas ng isang marupok ngunit magandang bulaklak.</p>
         <br/>
-        <p>Natututo akong basahin ang iyong mga katahimikan — ang mga salitang hindi mo kayang bigkasin ngunit nararamdaman ko sa paraan ng iyong pagtingin, sa bawat maliit na kilos na iyong ginagawa. Natututo akong hintayin ang iyong oras, sapagkat alam ko na ang puso mo ay hindi mabibigla — kailangang dahan-dahan, kailangang maingat, tulad ng pagbubukas ng isang marupok ngunit magandang bulaklak.</p>
-        <br/>
-        <p>Magkakamali tayo. Magtatampo. Magaagawan ng oras at pansin. May mga araw na ang layo ay magiging sanhi ng hindi pagkakaintindihan — mga salitang maling naibigay, mga inaasahang hindi natupad, mga sandaling pakiramdam natin ay nag-iisa kahit magkausap tayo. Iyon ay totoo. Hindi ko itatago.</p>
-        <br/>
-        <p>Ngunit ito rin ay totoo — sa bawat pagkakataong nagkamali ako, pinili kitang harapin nang may katapatan. Sa bawat sandaling hindi kita naintindihan, pinili kitang pag-aralan nang muli. Sa bawat agwat na lumaki sa pagitan natin, pinili kitang abutin — kahit mahirap, kahit malayo, kahit hindi ko laging alam kung paano.</p>
+        <p>Magkakamali tayo. Magtatampo. Magaagawan ng oras at pansin. Ngunit sa bawat pagkakataong nagkamali ako, pinili kitang harapin nang may katapatan. Sa bawat sandaling hindi kita naintindihan, pinili kitang pag-aralan nang muli. Sa bawat agwat na lumaki sa pagitan natin, pinili kitang abutin — kahit mahirap, kahit malayo.</p>
         <br/>
         <p>Ang distansya ay nagpapahirap sa ating komunikasyon ngunit hindi nito kayang burahin ang aking pagmamahal sa iyo. Ang ating mga pagtatalo ay tanda ng dalawang taong seryosong nagmamalasakit — sapagkat ang mga taong walang malasakit ay hindi na nag-aabala pang makipagtalo.</p>
         <br/>
-        <p>At ikaw — natututo ka rin. Natututo kang ibukas ang iyong puso sa isang taong handang tumanggap ng lahat ng ikaw. Natututo kang sabihin ang hindi mo laging kayang sabihin. Natututo kang magtiwala — at alam ko kung gaano kahirap iyon para sa isang pusong matagal nang nagingat.</p>
-        <br/>
-        <p>Kaya heto ang aking pangako sa iyo — hindi ko hihintayin na maging perpekto ang lahat bago kita mahalin nang buong-buo. Mamahalin kita ngayon — sa iyong mga pagkukulang, sa iyong mga araw na malamig, sa iyong mga sandaling hindi mo alam kung paano ipahayag ang nararamdaman mo. Mamahalin kita sa gitna ng ating pag-aaral, sa gitna ng ating pagkakamali, sa gitna ng lahat ng hindi pa natin nalalaman tungkol sa isa't isa.</p>
+        <p>Kaya heto ang aking pangako sa iyo — hindi ko hihintayin na maging perpekto ang lahat bago kita mahalin nang buong-buo. Mamahalin kita ngayon — sa iyong mga pagkukulang, sa iyong mga araw na malamig, sa iyong mga sandaling hindi mo alam kung paano ipahayag ang nararamdaman mo.</p>
         <br/>
         <p>Sapagkat ang tunay na pagmamahal ay hindi naghihintay ng tamang sandali — pumipili itong manatili kahit sa pinakamaling oras.</p>
         <br/>
-        <p class="letter-sign">Sa pagmamahal na patuloy na natututo — Edison 🌻</p>
+        <p>Hihintayin kita sa Disyembre. At sa lahat ng Disyembre pa pagkatapos noon.</p>
+        <br/>
+        <p class="message-sign">Sa pagmamahal na patuloy na natututo,<br/>— Edison 🌸</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>Three Months in and I still have a crush on you. 🌻</p>
-    <p class="footer-small">Made with love. Even when far apart.</p>
-    <p class="footer-small">&copy; Nagmamahal, Edison Garcia.</p>
+    <div class="footer-inner">
+      <p class="footer-main">Tatlong buwan pababa. Habambuhay pa ang kainan. 🌸</p>
+      <p class="footer-small">Made with love, kahit malayo.</p>
+      <p class="footer-small">&copy; Nagmamahal, Edison Garcia.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
